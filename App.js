@@ -12,6 +12,7 @@ const theme = {
     ...DefaultTheme.colors,
     primary: '#00A79D',
     accent: 'yellow',
+    
   },
 };
 
@@ -37,7 +38,7 @@ function App() {
             options={{
               title: '',
               headerStyle: {
-                backgroundColor: '#00A79D',
+                
               },
               headerTintColor: '#fff',
               headerTitleStyle: {

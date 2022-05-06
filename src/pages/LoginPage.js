@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, View, Image, TextInput } from 'react-native';
-import { TextInput as  MTextInput, Button } from 'react-native-paper';
+import { SafeAreaView, StatusBar, StyleSheet, View, Image, } from 'react-native';
+import { TextInput, Button, Card, Title } from 'react-native-paper';
 
 
 
@@ -11,6 +11,7 @@ const App = ({navigation}) => {
   const [text, onChangeText] = React.useState("");
   const [password, onChangePassword] = React.useState('');
 
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -18,8 +19,7 @@ const App = ({navigation}) => {
         animated={true}
         backgroundColor="#00A79D"
         barStyle={statusBarStyle}
-        hidden={false} 
-        
+        hidden={false}
     />
    
     
@@ -27,38 +27,42 @@ const App = ({navigation}) => {
     <View style={{
         justifyContent: 'center', 
         alignContent: 'center', 
-        alignItems: 'center'}}
+        alignItems: 'center',
+        marginBottom: 20
+    }}
     >
         <Image 
             style={{height: 50, width: 200}}
             source={{uri: 'https://eoffice.merapgroup.com/eoffice/ckfinder/userfiles/images/logo.png'}} 
         />
     </View>
-    <View style={styles.form}>
-        <MTextInput
-            label="Điện thoại"
+    <Card style={styles.form} >
+        <TextInput
+            placeholder='Điện thoại'
             onChangeText={onChangeText}
             value={text}
             mode="outlined"
             style={styles.input}
+            outlineColor="#d9d9d9"
+            
         />
 
-        <MTextInput
-            label="Mật khẩu"
+        <TextInput
+            placeholder='Mật khẩu'
             onChangeText={onChangePassword}
             value={password}
             mode="outlined"
             secureTextEntry={true}
             style={styles.input}
+            outlineColor="#d9d9d9"
         />
         <Button 
-            mode="contained" 
-            
+            mode="contained"
             onPress={() => console.log('Pressed')}>
             ĐĂNG NHẬP
         </Button>
             
-        </View>
+        </Card>
     </View>
 
     </SafeAreaView>
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 3,
     justifyContent: 'center',
-    backgroundColor: '#ECF0F1'
+    backgroundColor: '#FFFFFF'
   },
   header: {
     backgroundColor: '#00A79D',
@@ -79,10 +83,14 @@ const styles = StyleSheet.create({
     padding: 10
   },
   input: {
-    marginBottom: 20
+    marginBottom: 20,
+    backgroundColor: '#FFFFFF',
+    
   },
   form: {
-    padding: 10
+    padding: 20,
+    marginLeft: 10,
+    marginRight: 10
   }
 });
 
